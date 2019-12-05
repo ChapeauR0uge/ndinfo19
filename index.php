@@ -8,6 +8,11 @@
     </head>
 
     <body>
+      <?php
+        require 'utils.php';
+        require 'db_connect.php' ;
+        db_connect();
+      ?>
         <h1>Hello World</h1>
     </body>
 </html>

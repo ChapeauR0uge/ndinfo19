@@ -7,14 +7,14 @@ function db_connect() {
 		$host = 	'localhost';
 		$dbname = 	'ndinfo';
 		$user = 	'root';
-		$password = 	'mot de passe';
+		$password = 	'';
 		// FIN DES DONNEES
 
 		$db = new PDO('mysql:host='.$host.';dbname='.$dbname.'', $user, $password, $pdo_options);
+    echo "<p>lolol2</p>";
 		return $db;
 	} catch (Exception $e) {
 		die('Erreur de connexion : ' . $e->getMessage());
 	}
 }
-db_connect();
 ?>

@@ -11,7 +11,7 @@ function db_connect() {
 		// FIN DES DONNEES
 
 		$db = new PDO('mysql:host='.$host.';dbname='.$dbname.'', $user, $password, $pdo_options);
-    echo "<p>lolol2</p>";
+    echo "<p>Connexion a la ddb...</p>";
 		return $db;
 	} catch (Exception $e) {
 		die('Erreur de connexion : ' . $e->getMessage());

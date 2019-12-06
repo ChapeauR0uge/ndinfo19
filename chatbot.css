@@ -1,0 +1,155 @@
+body:not(#bodyChat) {
+	background: #d2d2d2;
+}
+/* Pour que les liens ne soient pas soulignés */
+a {
+	text-decoration: none;
+}
+img {
+	vertical-align: middle;
+}
+/* Conteneur principal des blocs de la page */
+#container {
+	width: 80%;
+	margin: 50px auto;
+	padding: 2px 20px 20px 20px;
+	background: #fff;
+}
+
+/* Bloc contenant la zone de texte et bouton */
+.post_message  {
+	width: 95%;
+	margin: auto;
+	border: 1px solid #d2d2d2;
+	background: #f8fafd;
+	padding: 3px;
+}
+/* Zone de texte */
+.post_message #message {
+	width: 80%;
+}
+/* Bouton d'envoi */
+.post_message #post {
+	width: 15%;
+	float: right;
+}
+
+.chat #text, .chat #users, .chat #users-chat {
+	height:500px;
+	overflow-y: auto;
+}
+
+/* La zone où sont affichés les messages
+et utilisateurs connectés */
+.chat {
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #d2d2d2;
+	padding: 0px;
+	height: 500px;
+}
+
+/* Zone des messages */
+.chat #text-td {
+	margin: 0px;
+	padding: 5px;
+	width: 80%;
+	background: #fff;
+}
+#chatbox{
+	width: 99%;
+	height: 98%;
+}
+.message .botMessage{
+	float: left;
+	display: block;
+	color : white;
+	background-color: red;
+	padding: 2%;
+}
+.message .userMessage{
+	display: block;
+	float : right;
+	color : white;
+	background-color: blue;
+	padding: 2%;
+	position:relative;
+}
+.message .userMessage + .hour{
+	display: block;
+	color: grey;
+	font-size: 0.7em;
+	float: right;
+	position:relative;
+	width: 100%;
+	text-align: right;
+} 
+.message .botMessage + .hour{
+	display: block;
+	color: grey;
+	font-size: 0.7em;
+	float: left;
+	position:relative;
+	width: 100%;
+	text-align: left;
+}
+.message{
+	display : inline-block;
+	width: 100%;
+}
+.fit-picture{
+	width: 80%;
+}
+
+
+/* {
+     background-color: red;
+		 width: auto;
+		 float: left;
+		 display: block;
+		 padding: 2%;
+} */
+
+#bubble_loading{
+   position: relative;
+   width: 8%;
+   height: 60px;
+   padding-left:1%;
+   background: red;
+   border-radius: 10px;
+	 visibility: visible;
+}
+#bubble_loading.hidden{
+	visibility: hidden;
+}
+
+
+
+
+#point1, #point2, #point3{
+	display: block;
+	width: 10px;
+	float: left;
+	color: white;
+
+	background-color: white;
+	border-radius: 50%;
+	margin-left: 12%;
+	margin-top: 33%;
+	text-align: center;
+
+}
+#point1{
+	animation: bounce 0.80s ease infinite alternate;
+}
+#point2{
+	animation: bounce 0.50s ease infinite alternate;
+}
+#point3{
+	animation: bounce 0.25s ease infinite alternate;
+}
+
+@keyframes bounce{
+     from {transform: translateY(0);}
+     to   {transform: translateY(-20px);}
+}

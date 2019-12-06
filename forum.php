@@ -36,6 +36,9 @@
             <li class="nav-item">
               <a class="nav-link" href="forum.php">Forum</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index2.php">Chatbox</a>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="nav-item dropdown">

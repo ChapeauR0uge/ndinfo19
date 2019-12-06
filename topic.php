@@ -108,7 +108,7 @@
           $req->execute(array("idtopic"=>$_POST['id_topic']));
         }
         echo "<table class='table'>";
-        echo "  <thead>
+        echo "  <thead class='thead-light'>
                 <tr>
                   <th scope='col'>Auteur</th>
                   <th scope='col'>Message</th>

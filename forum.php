@@ -94,7 +94,7 @@
         $req_topics = $db->prepare('SELECT * FROM topic');
         $req_topics->execute();
         echo "<table class='table'>";
-        echo "  <thead>
+        echo "  <thead class='thead-light'>
                 <tr>
                   <th scope='col'>Auteur</th>
                   <th scope='col'>Titre</th>

@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-//header("location:forum.php");
+header("location:".$_SERVER['HTTP_REFERER']);
 ?>

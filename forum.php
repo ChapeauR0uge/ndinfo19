@@ -63,11 +63,11 @@
           								 <form class="form" role="form" method="post" action="login.php" accept-charset="UTF-8" id="login-nav">
           										<div class="form-group">
           											 <label class="sr-only" for="examplePseudo">Pseudonyme</label>
-          											 <input class="form-control" id="examplePseudo" placeholder="Pseudonyme" required>
+          											 <input name="pseudo" class="form-control" id="examplePseudo" placeholder="Pseudonyme" required>
           										</div>
           										<div class="form-group">
           											 <label class="sr-only" for="exampleInputPassword1">Mot de Passe</label>
-          											 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de Passe" required>
+          											 <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de Passe" required>
           										</div>
           										<div class="form-group">
           											 <button name="ok" type="submit" class="btn btn-primary btn-block" value="ok">Se connecter</button>

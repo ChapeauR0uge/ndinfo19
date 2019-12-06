@@ -93,24 +93,41 @@
 
         $req_topics = $db->prepare('SELECT * FROM topic');
         $req_topics->execute();
-        echo "<ul>";
+        echo "<table class='table'>";
+        echo "  <thead>
+                <tr>
+                  <th scope='col'>Auteur</th>
+                  <th scope='col'>Titre</th>
+                  <th scope='col'>Message</th>
+                  <th scope='col'></th>
+                </tr>
+                </thead>
+                 <tbody>";
         while($donnee = $req_topics->fetch())
         {
-          echo "<li>".$donnee['name']." | ".$donnee['author']." | Nombre de messages : ".$donnee['nb_message'];
+          echo "<tr scope='row'>";
+          echo "<td>".$donnee['author']."</td>";
+          echo "<td>".$donnee['name']."</td>";
+          echo "<td>".$donnee['nb_message']."</td>";
+          echo "<td>";
           echo "<form method='POST' action='topic.php'>
           <input name='id_topic' type='hidden' value=".$donnee['id']."/>
           <input type='submit' value='Voir'/>
           </form>";
-          echo "</li>";
+          echo "</td>";
+          echo "</tr>";
         }
-        echo "</ul>";
+        echo " </tbody></table>";
       ?>
 
       <h2>Poster un topic :</h2>
       <form method="post" target="forum.php">
-        <input type="text" name="titre_topic"/>
+        <input type="text" name="titre_topic" placeholder="Titre"/>
+      </br>
+        </br>
         <textarea name="text_topic" rows="5" cols="33"></textarea>
-        <input name="subpost" type="submit" value="Post"/>
+      </br>  </br>
+        <input name="subpost" type="submit" value="Poster"/>
       </form>
 
       <?php

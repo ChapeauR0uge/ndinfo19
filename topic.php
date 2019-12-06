@@ -96,6 +96,7 @@
         }
         $donnee=$req_titre->fetch();
         $id_topic = $donnee['id'];
+        $nb_message= $donnee['nb_message'];
         echo "<h1>".$donnee['name']."</h1>";
 
         $req = $db->prepare("SELECT * FROM post WHERE id_topic=:idtopic");
@@ -106,13 +107,22 @@
         else {
           $req->execute(array("idtopic"=>$_POST['id_topic']));
         }
+        echo "<table class='table'>";
+        echo "  <thead>
+                <tr>
+                  <th scope='col'>Auteur</th>
+                  <th scope='col'>Message</th>
+                </tr>
+                </thead>
+                 <tbody>";
         while($donnee = $req->fetch())
         {
-          echo "<ul>";
-          echo "<li>Auteur :".$donnee['author']."</li>";
-          echo "<li>".$donnee['content']."</li>";
-          echo "</ul>";
+          echo "<tr scope='row'>";
+          echo "<td>".$donnee['author']."</td>";
+          echo "<td>".$donnee['content']."</td>";
+          echo "</tr>";
         }
+        echo " </tbody></table>";
       ?>
       <h2>Poster un message :</h2>
 
@@ -130,6 +140,8 @@
         $req3 = $db->prepare('INSERT INTO post(id_topic,author,content) VALUES (:id_topic,:author,:content)');
         $req3->execute(array('id_topic'=>$_POST['id_topic'],'content'=>$_POST['text_post'],'author'=>$_SESSION['pseudo']));
 
+        $req4 = $db->prepare('UPDATE topic SET nb_message=:nb_message WHERE id = :id_topic');
+        $req4->execute(array('nb_message'=>$nb_message+1,'id_topic'=>$id_topic));
         header("location:topic.php?id_topic=".$id_topic);
       }
       ?>
